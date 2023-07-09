@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Products;
+use App\Models\Categories;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +18,9 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    $prods = Products::all();
     return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'prods' => $prods
     ]);
 })->name('home');
 
@@ -31,8 +31,15 @@ Route::get('Signin', function(){
     return Inertia::render('Signin');
 })->name('Signin');
 
+Route::get('admin', function(){
+    $cats = Categories::all();
+    return Inertia::render('Admin',['cats' => $cats]);
+})->name('admin');
+
 Route::post('/storelog', 'App\Http\Controllers\userController@login');
 Route::post('/store', 'App\Http\Controllers\userController@store');
+
+Route::post('/storearticle', 'App\Http\Controllers\productsController@store');
 
 Route::middleware([
     'auth:sanctum',

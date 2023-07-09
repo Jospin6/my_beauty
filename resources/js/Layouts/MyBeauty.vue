@@ -1,9 +1,12 @@
 <script>
 export default {
+    props: ["cats"],
   data() {
     return {
+        casList: this.cats,
     }
   },
+  
   methods: {
     submit()
     {
@@ -36,14 +39,14 @@ export default {
         </div>
 
         <div class="w-full h-[40px] bg-[#000129] mb-2 flex justify-center text-white">
-            <div class="leading-9 mr-3">lorem</div>
-            <div class="leading-9 mr-3">Ipsum</div>
-            <div class="leading-9 mr-3">lorem</div>
-            <div class="leading-9 mr-3">Ipsum</div>
-            <div class="leading-9 mr-3">lorem</div>
-            <div class="leading-9 mr-3">Ipsum</div>
-            <div class="leading-9 mr-3">lorem</div>
-            <div class="leading-9 mr-3">Ipsum</div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">All</a></div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">Maquillages</a></div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">Visage</a></div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">Cheveux</a></div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">Solaire</a></div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">Homme</a></div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">Parfums</a></div>
+            <div class="leading-9 px-3 hover:bg-[#000333]"><a href="#" class="w-full h-full">Babys</a></div>
         </div>
 
         <main>
