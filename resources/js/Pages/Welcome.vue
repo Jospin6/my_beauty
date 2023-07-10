@@ -8,7 +8,7 @@ export default {
   props: ["prods"],
   data() {
     return {
-      
+      prodList: this.prods,
       
     };
   },
@@ -23,7 +23,7 @@ export default {
         <!-- <div class=" lg:gap-6 flex justify-center block"> -->
             <div class="grid lg:grid-cols-4 gap-6 w-[80%] m-[auto] h-[auto]">
                 <!-- the card here -->
-                <div v-for="prod in this.prods" :key="prod.id">
+                <div v-for="prod in this.prodList" :key="prod.id">
                     <div class="overflow-hidden rounded shadow relative">
                         <img :src="prod.image" class="w-full h-[250px]" alt="">
                         <div>{{ prod.name }}</div>
